@@ -10,8 +10,9 @@
     "build": "./scripts/build.sh",
     "example": "./scripts/buildExample.sh",
     "lint": "eslint .",
-    "prepublish": "npm run lint && npm test && npm run build",
-    "test": "./node_modules/karma/bin/karma start karma.conf.js"
+    "prepublish": "npm run snyk-protect; npm run lint && npm test && npm run build",
+    "test": "./node_modules/karma/bin/karma start karma.conf.js",
+    "snyk-protect": "snyk protect"
   },
   "keywords": [
     "bootstrap",
@@ -37,7 +38,8 @@
     "react-onclickoutside": "^5.7.0",
     "react-overlays": "^0.7.0",
     "react-prop-types": "^0.4.0",
-    "warning": "^3.0.0"
+    "warning": "^3.0.0",
+    "snyk": "^1.189.0"
   },
   "peerDependencies": {
     "react": "^0.14.0 || ^15.2.0",
@@ -84,5 +86,6 @@
     "type": "git",
     "url": "https://github.com/ericgio/react-bootstrap-typeahead.git"
   },
-  "bugs": "https://github.com/ericgio/react-bootstrap-typeahead/issues"
+  "bugs": "https://github.com/ericgio/react-bootstrap-typeahead/issues",
+  "snyk": true
 }
